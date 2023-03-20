@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- <a-button type="primary">Add</a-button> -->
-    <button @click="Test_Open">测试开</button>
-    <button @click="Test_Close">测试关</button>
+    <a-button type="primary" @click="Test_Open">测试开</a-button>
+    <a-button type="danger" @click="Test_Close">测试关</a-button>
   </div>
 </template>
 
@@ -21,6 +21,10 @@
 
 <script>
 import axios from "axios"
+import { Button } from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+const ButtonGroup = Button.Group;
+
 export default {
   name: 'Test2',
   methods:{
@@ -48,6 +52,10 @@ export default {
           // this.wsdcgq1 = res.data.wsdcgqs[0]
       })
     },
-  }
+  },
+  components: {
+      AButton: Button,
+      AButtonGroup: ButtonGroup,
+    },
 }
 </script>
