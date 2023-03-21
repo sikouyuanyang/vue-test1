@@ -2,6 +2,9 @@
     <div class="test1">
       <h1>温度:{{ wsdcgq1.wd }}</h1>
       <h1>湿度:{{ wsdcgq1.sd }}</h1>
+        <button  @click="Open_Map">打开地图</button>
+        <iframe class="iframe" src="/static/index0.html" frameborder="0" width="1200" height="300"/>
+
     </div>
 </template>
 <script>
@@ -30,6 +33,10 @@
                     console.log(res.data.wsdcgqs[0])
                     this.wsdcgq1 = res.data.wsdcgqs[0]
                 })
+            },
+            Open_Map(){
+                // window.open('./index0.html')
+                window.open('./Test2.vue')
             }
         }
     }
